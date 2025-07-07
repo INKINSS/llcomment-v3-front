@@ -2,7 +2,7 @@ import { Description, DialogTitle } from '@radix-ui/react-dialog';
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { Logo } from '../common/Logo';
+import { Logo } from '../commons/Logo';
 import { Button } from '../ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '../ui/sheet';
 
