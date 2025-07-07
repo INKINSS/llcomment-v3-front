@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "@tailwindcss/typography";
+
+@plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -15,6 +18,7 @@ body {
 
 @theme {
 	--color-textPrimary: rgb(200, 200, 200);
+	--color-textSecondary: rgb(148, 148, 148);
 }
 
 @theme inline {
