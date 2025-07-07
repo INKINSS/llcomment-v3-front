@@ -2,7 +2,7 @@ import { Description, DialogTitle } from '@radix-ui/react-dialog';
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { Logo } from '../commons/Logo';
+import { Logo } from '../commons/logos/Logo';
 import { Button } from '../ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '../ui/sheet';
 
@@ -55,7 +55,7 @@ export const NavBar = () => {
 				</SheetTrigger>
 				<SheetContent
 					side="right"
-					className="w-[300px] sm:w-[400px] bg-transparent border-l border-slate-800"
+					className="w-[300px] sm:w-[400px] bg-indigo-800 border-l border-slate-800"
 				>
 					<DialogTitle />
 					<Description />
