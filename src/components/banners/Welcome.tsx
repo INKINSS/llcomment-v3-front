@@ -3,7 +3,7 @@ import { SecondButton } from '../commons/buttons/SecondButton';
 
 export const Welcome = () => {
 	return (
-		<section className="flex flex-col items-center justify-center prose w-full md:w-4/6 lg:w-3/6">
+		<section className="flex flex-col items-center justify-center w-full md:w-4/6 lg:w-3/6">
 			<h1 className="text-center font-semibold text-3xl sm:text-4xl lg:text-5xl text-transparent bg-clip-text bg-gradient-to-t from-slate-100 to-indigo-500">
 				comparte tu conocimiento con el mundo
 			</h1>
