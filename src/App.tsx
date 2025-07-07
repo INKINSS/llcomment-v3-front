@@ -5,14 +5,14 @@ import { Welcome } from './pages/Welcome';
 
 function App() {
 	return (
-        <BrowserRouter>
-        <Routes>
-            <Route path='/' element={<MainLayout />}>
-                <Route index element={<Welcome />} />
-            </Route>
-        </Routes>
-        </BrowserRouter>
-    );
+		<BrowserRouter>
+			<Routes>
+				<Route path="/" element={<MainLayout />}>
+					<Route index element={<Welcome />} />
+				</Route>
+			</Routes>
+		</BrowserRouter>
+	);
 }
 
 export default App;
