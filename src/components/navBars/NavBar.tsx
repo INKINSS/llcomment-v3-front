@@ -1,13 +1,15 @@
 import { Description, DialogTitle } from '@radix-ui/react-dialog';
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { Logo } from '../commons/logos/Logo';
 import { Button } from '../ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '../ui/sheet';
+import { useLocation } from 'react-router-dom'
 
 export const NavBar = () => {
 	const [isOpen, setIsOpen] = useState(false);
+    const location = useLocation();
 
 	const links = [
 		{ to: '/', label: 'Inicio' },
@@ -38,6 +40,9 @@ export const NavBar = () => {
 							</NavLink>
 						</li>
 					))}
+                    <li>
+                        {location.pathname === '/login' ? null : <Link className='bg-indigo-600 text-white px-4 py-3 rounded-sm hover:bg-indigo-500 transition-colors' to='/login'>iniciar sesion</Link>}
+                    </li>
 				</ul>
 			</nav>
 
@@ -88,6 +93,9 @@ export const NavBar = () => {
 										</NavLink>
 									</li>
 								))}
+                                <li className='w-full'>
+                                    <Link className='inline-flex w-full justify-center text-white px-4 py-3 rounded-sm hover:bg-indigo-500 transition-colors' to='/login'>iniciar sesion</Link>
+                                </li>
 							</ul>
 						</nav>
 					</div>
