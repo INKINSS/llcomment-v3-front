@@ -1,13 +1,17 @@
 import { Description, DialogTitle } from '@radix-ui/react-dialog';
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
+import { useAuthStore } from '../../stores/useAuthStores';
 import { Logo } from '../commons/logos/Logo';
 import { Button } from '../ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '../ui/sheet';
 
 export const NavBar = () => {
 	const [isOpen, setIsOpen] = useState(false);
+	const { user, logout } = useAuthStore();
+
+	const location = useLocation();
 
 	const links = [
 		{ to: '/', label: 'Inicio' },
@@ -38,6 +42,24 @@ export const NavBar = () => {
 							</NavLink>
 						</li>
 					))}
+					<li>
+						{user ? (
+							<Link
+								className="bg-indigo-600 text-white px-4 py-3 rounded-sm hover:bg-indigo-500 transition-colors"
+								to="/login"
+								onClick={logout}
+							>
+								cerrar sesion
+							</Link>
+						) : location.pathname === '/login' ? null : (
+							<Link
+								className="bg-indigo-600 text-white px-4 py-3 rounded-sm hover:bg-indigo-500 transition-colors"
+								to="/login"
+							>
+								iniciar sesion
+							</Link>
+						)}
+					</li>
 				</ul>
 			</nav>
 
@@ -88,6 +110,24 @@ export const NavBar = () => {
 										</NavLink>
 									</li>
 								))}
+								<li className="w-full">
+									{user ? (
+										<Link
+											className="inline-flex w-full justify-center text-white px-4 py-3 rounded-sm hover:bg-indigo-500 transition-colors"
+											to="/login"
+											onClick={logout}
+										>
+											cerrar sesion
+										</Link>
+									) : (
+										<Link
+											className="inline-flex w-full justify-center text-white px-4 py-3 rounded-sm hover:bg-indigo-500 transition-colors"
+											to="/login"
+										>
+											iniciar sesion
+										</Link>
+									)}
+								</li>
 							</ul>
 						</nav>
 					</div>

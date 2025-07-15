@@ -16,7 +16,10 @@ body {
 
 @theme {
 	--color-textPrimary: rgb(200, 200, 200);
-	--color-textSecondary: rgb(148, 148, 148);
+	--color-textSecondary: rgb(200, 200, 200);
+
+	/* container sizes */
+	--container-ssm: 300px;
 }
 
 @theme inline {
